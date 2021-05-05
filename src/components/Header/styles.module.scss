@@ -1,0 +1,49 @@
+.headerContainer {
+  display: flex;
+  gap: 2rem;
+  height: 15rem;
+
+  padding: 3rem 4rem;
+
+  background-color: var(--blue-50);
+  color: var(--white);
+
+  img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 5rem;
+  }
+}
+
+.wrapper {
+  h1 {
+    margin-top: 1rem;
+    color: var(--white);
+  }
+  span {
+    margin-top: 1rem;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+
+  .menuContainer {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+
+      button {
+          background: transparent;
+          border: 0;
+
+          color: var(--white);
+
+          transition: filter 0.2s;
+
+          &:hover {
+            filter: brightness(0.7);
+          }
+      }
+  }
+}
