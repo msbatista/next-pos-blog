@@ -1,16 +1,12 @@
 import React from "react";
-import { BlogHeaderProps } from "../../model/BlogHeaderProps";
+import { HeaderProps } from "../../model/HeaderProps";
 
 import styles from "./styles.module.scss";
 
-export type HeaderProps = {
-  blogInfo: BlogHeaderProps,
-}
-
-export const Header = ({blogInfo}: HeaderProps) => {
+export const Header = ({ blogInfo }: HeaderProps) => {
   return (
     <header className={styles.headerContainer}>
-      <img src="/user.svg" alt="MsbDevOps"/>
+      <img src="/user.svg" alt="MsbDevOps" />
       <div className={styles.wrapper}>
         <div className={styles.menuContainer}>
           <button type="button">Blog</button>
