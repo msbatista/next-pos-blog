@@ -6,7 +6,7 @@ import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { api } from "../services/api";
 
-import {ThumbnailProps} from "../model/ThumbnailProps";
+import { ThumbnailProps } from "../model/ThumbnailProps";
 import { BlogHeaderProps } from "../model/BlogHeaderProps";
 import { ArticleProps } from "../model/ArticleProps";
 
