@@ -1,0 +1,21 @@
+.homePage {
+  padding: 1rem 16rem;
+  h1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    font-size: 1.25rem;
+    background: transparent;
+    border: 0;
+
+    color: var(--blue-100);
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
+  }
+}

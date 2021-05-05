@@ -10,7 +10,7 @@ export type HeaderProps = {
 export const Header = ({blogInfo}: HeaderProps) => {
   return (
     <header className={styles.headerContainer}>
-      <img src="/capivara.svg" alt="CapVaraDev" />
+      <img src="/user.svg" alt="MsbDevOps"/>
       <div className={styles.wrapper}>
         <div className={styles.menuContainer}>
           <button type="button">Blog</button>

@@ -1,0 +1,20 @@
+.thumbnailContainer {
+    margin-bottom: 1.5rem;
+
+    a {
+        color: var(--gray-800);
+        font-size: 1.25rem;
+        font-family: roboto, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        line-height: 1.4rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:focus {
+            color: var(--blue-200);
+        }
+    }
+}
