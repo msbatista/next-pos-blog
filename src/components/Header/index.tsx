@@ -18,7 +18,7 @@ export const Header = ({blogInfo}: HeaderProps) => {
           <button type="button">Descrição</button>
         </div>
         <div className={styles.blogDescriptionWrapper}>
-          <h1>{blogInfo.author}</h1>
+          <span>{blogInfo.author}</span>
           <p>{blogInfo.intro}</p>
         </div>
       </div>

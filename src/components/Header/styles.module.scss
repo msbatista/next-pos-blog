@@ -16,34 +16,40 @@
 }
 
 .wrapper {
-  h1 {
+  overflow: auto;
+  text-overflow: ellipsis;
+
+  .blogDescriptionWrapper {
     margin-top: 1rem;
-    color: var(--white);
-  }
-  span {
-    margin-top: 1rem;
-  }
-  p {
-    font-size: 0.875rem;
+
+    span {
+      color: var(--white);
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
   }
 
   .menuContainer {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
 
-      button {
-          background: transparent;
-          border: 0;
+    button {
+      background: transparent;
+      border: 0;
 
-          color: var(--white);
+      color: var(--white);
 
-          transition: filter 0.2s;
+      transition: filter 0.2s;
 
-          &:hover {
-            filter: brightness(0.7);
-          }
+      &:hover {
+        filter: brightness(0.7);
       }
+    }
   }
 }
