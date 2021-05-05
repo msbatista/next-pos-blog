@@ -5,16 +5,12 @@ import { Thumbnail } from "../components/Thumbnail";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { api } from "../services/api";
+
+import {ThumbnailProps} from "../model/ThumbnailProps";
 import { BlogHeaderProps } from "../model/BlogHeaderProps";
 import { ArticleProps } from "../model/ArticleProps";
 
 import styles from "./home.module.scss";
-
-export type ThumbnailProps = {
-  latestArticles: Array<ArticleProps>;
-  allArticles: Array<ArticleProps>;
-  blogInfo: BlogHeaderProps;
-};
 
 export default function Home({
   latestArticles,
@@ -79,7 +75,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   });
 
-  const articles = data.map((article) => {
+  const articles: Array<ArticleProps> = data.map((article) => {
     return {
       id: article.id,
       title: article.title,
