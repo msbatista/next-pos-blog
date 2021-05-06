@@ -51,8 +51,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (content) => {
-  const { slug } = content.params;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug } = context.params;
   const { data } = await api.get(`articles/${slug}`, {});
 
   const article: ArticleProps = {
