@@ -27,7 +27,7 @@ export default function Article({ article }: ArticleType) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await api.get("articles", {
     params: {
-      _limit: 2,
+      _limit: 12,
       _sort: "published_at",
       _order: "desc",
     },
