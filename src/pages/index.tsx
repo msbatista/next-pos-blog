@@ -1,22 +1,16 @@
 import React, { useState } from "react";
-import { Header } from "../components/Header";
 import { Thumbnail } from "../components/Thumbnail";
 
 import Head from "next/head";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { api } from "../services/api";
 
 import { ThumbnailProps } from "../model/ThumbnailProps";
-import { BlogHeaderProps } from "../model/BlogHeaderProps";
 import { ArticleProps } from "../model/ArticleProps";
 
 import styles from "./home.module.scss";
 
-export default function Home({
-  latestArticles,
-  allArticles,
-  blogInfo,
-}: ThumbnailProps) {
+export default function Home({ latestArticles, allArticles }: ThumbnailProps) {
   const [showAllArticles, setShowArticles] = useState(false);
 
   const toggleArticles = () => setShowArticles(!showAllArticles);
@@ -26,7 +20,6 @@ export default function Home({
       <Head>
         <title>Home | MSB DevOps</title>
       </Head>
-      <Header blogInfo={blogInfo} />
       <div className={styles.homePage}>
         <section className={styles.homePageContent}>
           <h1>Últimas do blog</h1>
@@ -37,6 +30,7 @@ export default function Home({
                     key={article.id}
                     title={article.title}
                     summary={article.summary}
+                    id={article.id}
                   />
                 );
               })
@@ -46,6 +40,7 @@ export default function Home({
                     key={article.id}
                     title={article.title}
                     summary={article.summary}
+                    id={article.id}
                   />
                 );
               })}
@@ -58,15 +53,7 @@ export default function Home({
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const headerContent = await api.get("header", {});
-  const blogInfo: BlogHeaderProps = {
-    id: headerContent.data?.id,
-    author: headerContent.data?.author,
-    intro: headerContent.data?.intro,
-    logo: headerContent.data?.logo,
-  };
-
+export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get("articles", {
     params: {
       _limit: 12,
@@ -92,7 +79,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       latestArticles,
       allArticles,
-      blogInfo,
     },
   };
 };
