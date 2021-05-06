@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import styles from "./article.module.scss";
@@ -12,6 +13,9 @@ type ArticleType = {
 export default function Article({ article }: ArticleType) {
   return (
     <div className={styles.article}>
+      <Head>
+        <title>{article.title} | MSB DevOps</title>
+      </Head>
       <h1>{article.title}</h1>
       <div className={styles.articleSummary}>
         <span>{article.summary}</span>
