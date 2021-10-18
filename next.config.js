@@ -1,5 +1,13 @@
-module.exports = {
+const withPWA = require("next-pwa");
+
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+    swSrc: "service-worker.js",
+    disable: process.env.NODE_ENV === "development",
+    register: true,
+  },
   images: {
     domains: ["storage.googleapis.com"],
   },
-};
+});

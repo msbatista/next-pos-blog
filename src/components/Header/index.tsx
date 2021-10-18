@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 export const Header = () => {
   return (
     <header className={styles.headerContainer}>
-      <img src="/user.svg" alt="MsbDevOps" />
+      <img src="/icons/user.svg" alt="MsbDevOps" />
       <div className={styles.wrapper}>
         <div className={styles.menuContainer}>
           <Link href="/">
