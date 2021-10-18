@@ -3,7 +3,7 @@ const withPWA = require("next-pwa");
 module.exports = withPWA({
   pwa: {
     dest: "public",
-    swSrc: "service-worker.js",
+    sw: "sw.js",
     disable: process.env.NODE_ENV === "development",
     register: true,
   },
